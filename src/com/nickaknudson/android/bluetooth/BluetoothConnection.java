@@ -315,7 +315,8 @@ public class BluetoothConnection {
                     break;
                 } catch (NullPointerException e) {
                     Log.e(TAG, "Socket Type: " + mSocketType + "accept() failed", e);
-                	connectionFailed(mmCallback);
+                	// TODO connectionFailed(mmCallback);
+                    BluetoothConnection.this.stop();
                 }
 
                 // If a connection was accepted
