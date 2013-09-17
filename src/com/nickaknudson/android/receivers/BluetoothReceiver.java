@@ -14,6 +14,11 @@ import android.os.Parcelable;
 
 public abstract class BluetoothReceiver extends BroadcastReceiver {
 	
+	/*
+	 <uses-permission android:name="android.permission.BLUETOOTH"/>
+     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+	 */
+	
 	static public IntentFilter getFilter() {
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);

@@ -8,7 +8,6 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 
 public class ServiceConnectionManager<T extends IBinder> extends ContextWrapper implements ServiceConnection {
-	private static final String TAG = ServiceConnectionManager.class.getSimpleName();
 	
 	private boolean bound = false;
 	private ServiceConnectionCallback<T> callback;

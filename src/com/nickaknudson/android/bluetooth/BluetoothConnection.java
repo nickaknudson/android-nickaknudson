@@ -25,11 +25,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 /**
  * This class does all the work for setting up and managing Bluetooth
