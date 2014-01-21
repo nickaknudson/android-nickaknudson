@@ -26,12 +26,12 @@ public class Location extends Model<Location> {
 	@Override
 	public void set(Location model) {
 		location = model.getLocation();
-		setChangedAndNotify();
+		changed();
 	}
 
 	public void set(android.location.Location location) {
 		this.location = location;
-		setChangedAndNotify();
+		changed();
 	}
 
 	public void set(String provider) {
