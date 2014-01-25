@@ -48,7 +48,7 @@ import java.io.ObjectOutputStream;
  * @version 1.0
  *
  */
-class Memory {
+public class Memory {
 
   /**
    * Function that get the size of an object.
