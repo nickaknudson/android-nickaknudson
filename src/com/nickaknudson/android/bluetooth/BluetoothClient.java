@@ -123,9 +123,8 @@ public abstract class BluetoothClient<T extends Model<T>> implements SRClient<T>
 				// TODO
 			}
 		}
-    };
+	};
 
-	@Override
 	public Type getType() {
 		return getTypeToken().getType();
 	}

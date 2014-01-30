@@ -42,10 +42,6 @@ public class LocationClient implements ReceiveClient<Location> {
 		return false;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.nickaknudson.mva.clients.ModelClient#getType()
-	 */
-	@Override
 	public Type getType() {
 		return getTypeToken().getType();
 	}
