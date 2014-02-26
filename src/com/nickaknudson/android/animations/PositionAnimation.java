@@ -33,19 +33,22 @@ public class PositionAnimation extends Animation {
 
 	@Override
 	protected void applyTransformation(float interpolatedTime, Transformation t) {
-		if(fromX == null) fromX = callback.fromX();
-		if(fromY == null) fromY = callback.fromY();
-		float dx = 0;
-		float dy = 0;
-		if (fromX != toX) {
-			//dx = fromX + ((toX - fromX) * interpolatedTime);
-			dx = ((toX - fromX) * interpolatedTime);
+		if(interpolatedTime > 0) {
+			if(fromX == null) fromX = callback.fromX(toX);
+			if(fromY == null) fromY = callback.fromY(toY);
+			//callback.fromY(interpolatedTime);
+			float dx = 0;
+			float dy = 0;
+			if (fromX != toX) {
+				//dx = fromX + ((toX - fromX) * interpolatedTime);
+				dx = ((toX - fromX) * interpolatedTime);
+			}
+			if (fromY != toY) {
+				//dy = fromY + ((toY - fromY) * interpolatedTime);
+				dy = ((toY - fromY) * interpolatedTime);
+			}
+			t.getMatrix().setTranslate(dx, dy);
 		}
-		if (fromY != toY) {
-			//dy = fromY + ((toY - fromY) * interpolatedTime);
-			dy = ((toY - fromY) * interpolatedTime);
-		}
-		t.getMatrix().setTranslate(dx, dy);
 	}
 	
 	/**
@@ -53,12 +56,14 @@ public class PositionAnimation extends Animation {
 	 */
 	public interface PositionAnimationCallback extends Callback {
 		/**
+		 * @param toX 
 		 * @return
 		 */
-		public float fromX();
+		public float fromX(Float toX);
 		/**
+		 * @param toY 
 		 * @return
 		 */
-		public float fromY();
+		public float fromY(Float toY);
 	}
 }

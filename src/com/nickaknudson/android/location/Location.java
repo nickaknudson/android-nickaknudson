@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Printer;
 
 import com.nickaknudson.mva.Model;
+import com.nickaknudson.mva.properties.Property;
 
 /**
  * @author nick
@@ -121,8 +122,16 @@ public class Location extends Model<Location> {
 	public boolean hasSpeed() {
 		return location.hasSpeed();
 	}
+	/*
+	@Override
+	public Property<?>[] properties() {
+		// TODO
+		Property<?>[] prop = {};
+		return prop;
+	}
 	
 	//boolean	 isFromMockProvider() {
 	//	return location.isFromMockProvider();
 	//}
+	 */
 }
