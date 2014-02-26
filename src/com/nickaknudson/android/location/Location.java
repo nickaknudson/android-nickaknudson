@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Printer;
 
 import com.nickaknudson.mva.Model;
-import com.nickaknudson.mva.properties.Property;
 
 /**
  * @author nick
@@ -77,10 +76,6 @@ public class Location extends Model<Location> {
 	
 	public float getBearing() {
 		return location.getBearing();
-	}
-	public 
-	long getElapsedRealtimeNanos() {
-		return location.getElapsedRealtimeNanos();
 	}
 	
 	public Bundle getExtras() {
