@@ -14,11 +14,11 @@ import android.view.animation.Transformation;
  * {@link Transformation}
  * 
  */
-public class AlphaAnimation extends Animation {
+public class AlphaChainAnimation extends Animation {
 	
 	private Float fromAlpha;
 	private Float toAlpha;
-	private AlphaAnimationCallback callback;
+	private AlphaChainAnimationCallback callback;
 
 	/**
 	 * Constructor to use when building an AlphaAnimation from code
@@ -27,7 +27,7 @@ public class AlphaAnimation extends Animation {
 	 *            Ending alpha value for the animation.
 	 * @param callback 
 	 */
-	public AlphaAnimation(float toAlpha, AlphaAnimationCallback callback) {
+	public AlphaChainAnimation(float toAlpha, AlphaChainAnimationCallback callback) {
 		this.toAlpha = toAlpha;
 		this.callback = callback;
 	}
@@ -65,7 +65,7 @@ public class AlphaAnimation extends Animation {
 	/**
 	 * @author nick
 	 */
-	public interface AlphaAnimationCallback extends Callback {
+	public interface AlphaChainAnimationCallback extends Callback {
 		/**
 		 * @param toAlpha 
 		 * @return

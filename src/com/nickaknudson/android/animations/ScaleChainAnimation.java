@@ -13,7 +13,7 @@ import android.view.animation.Transformation;
  * to use for the center of scaling.
  * 
  */
-public class ScaleAnimation extends Animation {
+public class ScaleChainAnimation extends Animation {
 
 	private Float mFromX;
 	private float mToX;
@@ -23,7 +23,7 @@ public class ScaleAnimation extends Animation {
 	private Float mPivotX;
 	private Float mPivotY;
 
-	private ScaleAnimationCallback callback;
+	private ScaleChainAnimationCallback callback;
 
 	/**
 	 * Constructor to use when building a ScaleAnimation from code
@@ -34,7 +34,7 @@ public class ScaleAnimation extends Animation {
 	 *            Vertical scaling factor to apply at the end of the animation
 	 * @param callback
 	 */
-	public ScaleAnimation(float toX, float toY, ScaleAnimationCallback callback) {
+	public ScaleChainAnimation(float toX, float toY, ScaleChainAnimationCallback callback) {
 		mToX = toX;
 		mToY = toY;
 		this.callback = callback;
@@ -73,7 +73,7 @@ public class ScaleAnimation extends Animation {
 	/**
 	 * @author nick
 	 */
-	public interface ScaleAnimationCallback extends Callback {
+	public interface ScaleChainAnimationCallback extends Callback {
 		/**
 		 * @param toScaleX 
 		 * @return

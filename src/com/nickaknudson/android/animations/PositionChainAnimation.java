@@ -12,20 +12,20 @@ import android.view.animation.Transformation;
  * @author nick
  *
  */
-public class PositionAnimation extends Animation {
+public class PositionChainAnimation extends Animation {
 	
 	private Float toX;
 	private Float toY;
 	private Float fromX;
 	private Float fromY;
-	private PositionAnimationCallback callback;
+	private PositionChainAnimationCallback callback;
 
 	/**
 	 * @param toX
 	 * @param toY
 	 * @param callback 
 	 */
-	public PositionAnimation(float toX, float toY, PositionAnimationCallback callback) {
+	public PositionChainAnimation(float toX, float toY, PositionChainAnimationCallback callback) {
 		this.toX = toX;
 		this.toY = toY;
 		this.callback = callback;
@@ -54,7 +54,7 @@ public class PositionAnimation extends Animation {
 	/**
 	 * @author nick
 	 */
-	public interface PositionAnimationCallback extends Callback {
+	public interface PositionChainAnimationCallback extends Callback {
 		/**
 		 * @param toX 
 		 * @return
