@@ -37,11 +37,9 @@ public class AlphaChainAnimation extends Animation {
 	 */
 	@Override
 	protected void applyTransformation(float interpolatedTime, Transformation t) {
-		if(interpolatedTime > 0) {
-			if(fromAlpha == null) fromAlpha = callback.fromAlpha(toAlpha);
-			final float alpha = fromAlpha;
-			t.setAlpha(alpha + ((toAlpha - alpha) * interpolatedTime));
-		}
+		if(fromAlpha == null) fromAlpha = callback.fromAlpha(toAlpha);
+		final float alpha = fromAlpha;
+		t.setAlpha(alpha + ((toAlpha - alpha) * interpolatedTime));
 	}
 
 	@Override

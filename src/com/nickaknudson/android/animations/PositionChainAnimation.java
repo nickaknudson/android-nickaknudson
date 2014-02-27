@@ -33,22 +33,20 @@ public class PositionChainAnimation extends Animation {
 
 	@Override
 	protected void applyTransformation(float interpolatedTime, Transformation t) {
-		if(interpolatedTime > 0) {
-			if(fromX == null) fromX = callback.fromX(toX);
-			if(fromY == null) fromY = callback.fromY(toY);
-			//callback.fromY(interpolatedTime);
-			float dx = 0;
-			float dy = 0;
-			if (fromX != toX) {
-				//dx = fromX + ((toX - fromX) * interpolatedTime);
-				dx = ((toX - fromX) * interpolatedTime);
-			}
-			if (fromY != toY) {
-				//dy = fromY + ((toY - fromY) * interpolatedTime);
-				dy = ((toY - fromY) * interpolatedTime);
-			}
-			t.getMatrix().setTranslate(dx, dy);
+		if(fromX == null) fromX = callback.fromX(toX);
+		if(fromY == null) fromY = callback.fromY(toY);
+		//callback.fromY(interpolatedTime);
+		float dx = 0;
+		float dy = 0;
+		if (fromX != toX) {
+			//dx = fromX + ((toX - fromX) * interpolatedTime);
+			dx = ((toX - fromX) * interpolatedTime);
 		}
+		if (fromY != toY) {
+			//dy = fromY + ((toY - fromY) * interpolatedTime);
+			dy = ((toY - fromY) * interpolatedTime);
+		}
+		t.getMatrix().setTranslate(dx, dy);
 	}
 	
 	/**

@@ -42,31 +42,29 @@ public class ScaleChainAnimation extends Animation {
 
 	@Override
 	protected void applyTransformation(float interpolatedTime, Transformation t) {
-		if(interpolatedTime > 0) {
-			if (mFromX == null)
-				mFromX = callback.fromScaleX(mToX);
-			if (mFromY == null)
-				mFromY = callback.fromScaleY(mToY);
-			if (mPivotX == null) 
-				mPivotX = callback.pivotX();
-			if (mPivotY == null) 
-				mPivotY = callback.pivotY();
-			float sx = 1.0f;
-			float sy = 1.0f;
-			float scale = getScaleFactor();
+		if (mFromX == null)
+			mFromX = callback.fromScaleX(mToX);
+		if (mFromY == null)
+			mFromY = callback.fromScaleY(mToY);
+		if (mPivotX == null) 
+			mPivotX = callback.pivotX();
+		if (mPivotY == null) 
+			mPivotY = callback.pivotY();
+		float sx = 1.0f;
+		float sy = 1.0f;
+		float scale = getScaleFactor();
 
-			if (mFromX != 1.0f || mToX != 1.0f) {
-				sx = mFromX + ((mToX - mFromX) * interpolatedTime);
-			}
-			if (mFromY != 1.0f || mToY != 1.0f) {
-				sy = mFromY + ((mToY - mFromY) * interpolatedTime);
-			}
+		if (mFromX != 1.0f || mToX != 1.0f) {
+			sx = mFromX + ((mToX - mFromX) * interpolatedTime);
+		}
+		if (mFromY != 1.0f || mToY != 1.0f) {
+			sy = mFromY + ((mToY - mFromY) * interpolatedTime);
+		}
 
-			if (mPivotX == 0 && mPivotY == 0) {
-				t.getMatrix().setScale(sx, sy);
-			} else {
-				t.getMatrix().setScale(sx, sy, scale * mPivotX, scale * mPivotY);
-			}
+		if (mPivotX == 0 && mPivotY == 0) {
+			t.getMatrix().setScale(sx, sy);
+		} else {
+			t.getMatrix().setScale(sx, sy, scale * mPivotX, scale * mPivotY);
 		}
 	}
 
