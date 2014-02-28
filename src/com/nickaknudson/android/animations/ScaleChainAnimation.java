@@ -28,10 +28,8 @@ public class ScaleChainAnimation extends Animation {
 	/**
 	 * Constructor to use when building a ScaleAnimation from code
 	 * 
-	 * @param toX
-	 *            Horizontal scaling factor to apply at the end of the animation
-	 * @param toY
-	 *            Vertical scaling factor to apply at the end of the animation
+	 * @param toX Horizontal scaling factor to apply at the end of the animation
+	 * @param toY Vertical scaling factor to apply at the end of the animation
 	 * @param callback
 	 */
 	public ScaleChainAnimation(float toX, float toY, ScaleChainAnimationCallback callback) {
@@ -74,23 +72,23 @@ public class ScaleChainAnimation extends Animation {
 	public interface ScaleChainAnimationCallback extends Callback {
 		/**
 		 * @param toScaleX 
-		 * @return
+		 * @return fromScaleX
 		 */
 		public float fromScaleX(Float toScaleX);
 
 		/**
 		 * @param toScaleY 
-		 * @return
+		 * @return fromScaleY
 		 */
 		public float fromScaleY(Float toScaleY);
 
 		/**
-		 * @return
+		 * @return pivotX
 		 */
 		public Float pivotX();
 
 		/**
-		 * @return
+		 * @return pivotY
 		 */
 		public Float pivotY();
 	}
